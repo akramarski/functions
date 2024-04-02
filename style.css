@@ -1,0 +1,187 @@
+
+:root {
+    --font-sizemobile: 80px;
+    --color: darkgrey;
+    --gutter: calc(var(--font-size) * 2);
+    --font-text: 'Archivo', sans-serif;
+    --font-title: 'Instrument Serif', serif; 
+}
+
+:root {
+    --background-color: #eae5dd;
+    --text-color: #000000;
+    font-size: 16px; /* Tamaño de fuente base */
+}
+
+/* Clase para cambiar colores al modo oscuro */
+.dark-mode {
+    --background-color: #000000;
+    --text-color: #eae5dd;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para el modo oscuro */
+
+
+
+body {
+    font-family: 'Instrument Serif', serif;
+    
+
+  }
+
+@media (min-width: 600px){
+    :root{
+        --font-size:32px;
+    }
+}
+.titletype1{
+    font-family:var(--font-title);
+    font-style: normal;
+    font-size: var(--font-sizemobile);
+    line-height: 80px;
+    margin-left: 15px;
+    
+
+}
+
+.titletype2{
+    font-family:var( --font-title);
+    font-style: italic;
+    font-size: var(--font-sizemobile);
+    line-height: 80px;
+    margin-left: 15px;
+
+}
+sup {
+    vertical-align: super;
+    font-size: 20px;
+    font-family:var(--font-text);
+    font-weight: 10;
+  }
+
+.mainbar{
+    font-family:var(--font-text);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 30px;
+    margin: 15px;
+    padding-top: 15px;
+}
+.menu{
+    display:flex;
+    flex-direction: column;
+    line-height: 15px;
+    font-size: 12px;
+}
+
+.mode-switcher {
+    display: flex;
+    align-items: flex-start;
+    justify-content: right;
+    border: none; 
+    border-radius: 20px; 
+    overflow: hidden; 
+}
+
+.mode-button {
+    margin-left: auto;
+    justify-content: right;
+    color: rgb(36, 36, 36); 
+    border-radius: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    border: none; 
+    position: relative; 
+    z-index: 1; 
+}
+
+/* Clases para controlar el efecto de letterpress */
+.mode-button.print-mode {
+    /* Texto normal sin sombra para el modo activo */
+    
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.585), -1px -1px 1px rgba(255, 255, 255, 0.501);
+}
+
+.mode-button.digital-mode {
+    /* Efecto de letterpress para el modo inactivo */
+    text-shadow: none;
+}
+
+.carousel {
+    width: 100%;
+    height: 100vh; 
+    margin: 0px;
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+  .carousel {
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    position: relative; 
+    transition: background-image 0.4s ease-in-out; 
+    
+}
+
+.carousel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); 
+    z-index: 1; }
+
+.carousel-content {
+    top: 50px;
+    position: absolute; 
+    z-index: 2; 
+    color:#eae5dd; 
+    text-align: left; 
+}
+
+.menu-bar {
+    position: fixed;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+/* Estilos para modo oscuro */
+.dark-mode p, .dark-mode a {
+    color: #eae5dd; /* Esto cambiará el color del texto de <p> y <a> en modo oscuro */
+}
+
+.dark-mode {
+    background-color: #000000; /* Fondo oscuro para todo el cuerpo */
+}
+
+body.dark-mode {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
