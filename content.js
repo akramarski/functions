@@ -28,50 +28,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000); 
   });
 
-// Obtén los botones
 var printModeButton = document.getElementById('printMode');
 var digitalModeButton = document.getElementById('digitalMode');
 
-// Agrega un evento de clic al botón de Modo Print
 printModeButton.addEventListener('click', function() {
     this.classList.add('print-mode');
     this.classList.remove('digital-mode');
     digitalModeButton.classList.remove('print-mode');
     digitalModeButton.classList.add('digital-mode');
-    // Aquí podrías agregar lógica adicional para cambiar el modo a "Print"
+
 });
 
-// Agrega un evento de clic al botón de Modo Digital
+
 digitalModeButton.addEventListener('click', function() {
     this.classList.add('print-mode');
     this.classList.remove('digital-mode');
     printModeButton.classList.remove('print-mode');
     printModeButton.classList.add('digital-mode');
-    // Aquí podrías agregar lógica adicional para cambiar el modo a "Digital"
+
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const root = document.documentElement;
     const increaseFontBtn = document.getElementById('increase-font');
     const decreaseFontBtn = document.getElementById('decrease-font');
     const toggleContrastBtn = document.getElementById('toggle-contrast');
 
-    // Función para cambiar el tamaño de la fuente de todo el texto
     const changeFontSize = (increase) => {
-        const currentSize = parseInt(window.getComputedStyle(root).fontSize);
-        if (increase) {
-            root.style.fontSize = `${currentSize + 1}px`;
-        } else {
-            root.style.fontSize = `${currentSize - 1}px`;
-        }
+        document.querySelectorAll('p, a').forEach(element => {
+            const currentSize = parseFloat(window.getComputedStyle(element, null).getPropertyValue('font-size'));
+            if (increase) {
+                element.style.fontSize = `${currentSize + 1}px`;
+            } else {
+                element.style.fontSize = `${currentSize - 1}px`;
+            }
+        });
     };
 
-    // Función para alternar entre modo claro y oscuro
     const toggleContrast = () => {
-        root.classList.toggle('dark-mode');
+        document.body.classList.toggle('dark-mode');
     };
 
-    // Eventos para los botones
     increaseFontBtn.addEventListener('click', () => changeFontSize(true));
     decreaseFontBtn.addEventListener('click', () => changeFontSize(false));
     toggleContrastBtn.addEventListener('click', toggleContrast);
