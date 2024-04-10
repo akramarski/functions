@@ -1,0 +1,38 @@
+{
+    "Editorial": [
+      {
+        "role": "Editor-in-chief",
+        "name": "Susannah Frankel"
+      },
+      {
+        "role": "Group editorial director",
+        "name": "Jefferson Hack"
+      }
+    ],
+    "Fashion": [
+      {
+        "role": "Fashion editor",
+        "name": "Rebecca Perlmutar"
+      },
+      {
+        "role": "Senior fashion editors-at-large",
+        "name": "Agata Belcen, Ellie Grace Cumming"
+      }
+    ],
+    "Design": [
+      {
+        "role": "Design director",
+        "name": "Charles Britton at STJ Studio"
+      },
+      {
+        "role": "Studio director at STJ Studio",
+        "name": "Alice Limer"
+      }
+    ],
+    "Text": [
+    ],
+    "Production": [
+    ],
+    "Photography": [
+    ]
+  }
