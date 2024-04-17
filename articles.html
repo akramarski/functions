@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="reset.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script defer src="content.js"></script>
+        <script defer src="aother.js"></script>
+    
+    <title>Article Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/357dec575cec43d3b5acfea7e06a125c?family=Glosa+Display+W01+Medium" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="mainbar">
+        <div class="fullcontainer-index">
+            <a href="index.html">re | inventing</a>
+        </div>
+        <div class="menu">
+            <a href="">Magazine Archives</a>
+            <a href="">Limited Editions</a>
+            <a href="">Artists</a>
+        </div>
+        <div class="mode-switcher">
+            <button id="printMode" class="mode-button active">PRINT</button>
+            <button id="digitalMode" class="mode-button">DIGITAL</button>
+        </div>
+        
+    </div>
+
+    <article class="article-container">
+        
+        <header class="article-header">
+            <p class="label"> AnOther Thing I Wanted to Tell You...</p>
+            <div class="buttonarticle">
+                <button id="prev-article">&larr;</button>
+                <button id="next-article">&rarr;</button>
+                </div>
+            <h1 id="article-title"></h1>
+            
+         
+        </header>
+        <section class="article-content">
+            <div class="first-text">
+            <div class="article-meta">
+                <span id="section">WORDS</span>
+                <span id="article-author"></span>
+            </div>
+            <div id="article-text1"></div>
+            </div>
+            <div class="textandimage">
+            <img id="article-image" src="" alt="Article Image">
+            <div id="article-text2"></div>
+        </div>
+        </section>
+        <footer class="article-footer" id="article-footer"></footer>
+
+
+        <footer class="footer">
+            <div class="menu-bar">
+                <button id="increase-font">A+</button>
+                <button id="decrease-font">A-</button>
+                <button id="toggle-contrast">DARK-MODE</button>
+            </div>
+       </footer>
+    </article>
+</body>
+</html>
