@@ -7,6 +7,31 @@
       {
         "role": "Group editorial director",
         "name": "Jefferson Hack"
+      },
+      {
+        "role": "Fashion Director",
+        "name": "Katie Shillingford"
+      },
+      {
+        "role": "Art Director",
+        "name": "Sarah-Jayne Todd"
+      },
+      {
+        "role": "Editor",
+        "name": "Sophie Bew"
+      },
+      {
+        "role": "Photographic Director",
+        "name": "Heleba Whelan"
+      }
+      ,
+      {
+        "role": "Deputy and literary editor",
+        "name": "Hannah Lack"
+      },
+      {
+        "role": "Fashion features director",
+        "name": "Alexander Fury"
       }
     ],
     "Fashion": [
