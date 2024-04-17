@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
           articleElement.appendChild(titleElement);
   
           articleElement.addEventListener('click', () => {
-            window.location.href = article.articleUrl; // Esto asumirá que el JSON tiene una URL válida para el artículo
+            window.location.href = article.articleUrl; 
           });
   
           galleryContainer.appendChild(articleElement);
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
               });
           });
 
-          let currentIndex = 0; // Variable global para rastrear el índice del artículo actual
+          let currentIndex = 0; 
 
 function loadArticle(index) {
   fetch('articles.json')
@@ -152,7 +152,7 @@ function loadArticle(index) {
         document.getElementById('article-text2').innerHTML = article.text2;
         document.getElementById('article-image').src = article.imageUrl;
         document.getElementById('article-footer').innerHTML = article.footer;
-        currentIndex = index; // Actualiza el índice actual
+        currentIndex = index; 
       } else {
         console.log('No more articles available.');
       }
@@ -163,14 +163,13 @@ function loadArticle(index) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadArticle(currentIndex); // Carga el primer artículo
+  loadArticle(currentIndex); 
 
-  // Botón para cargar el artículo siguiente
   document.getElementById('next-article').addEventListener('click', () => {
     loadArticle(currentIndex + 1);
   });
 
-  // Botón para cargar el artículo anterior
+
   document.getElementById('prev-article').addEventListener('click', () => {
     if (currentIndex > 0) {
       loadArticle(currentIndex - 1);
