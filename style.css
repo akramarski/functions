@@ -70,7 +70,7 @@ sup {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 20px;
+    gap: 15px;
     padding-bottom: 30px;
     margin: 15px;
     padding-top: 15px;
@@ -86,8 +86,7 @@ sup {
     display: flex;
     align-items: flex-start;
     justify-content: right;
-    border: none; 
-    border-radius: 20px; 
+    border: none;  
     overflow: hidden; 
 }
 
@@ -95,7 +94,6 @@ sup {
     margin-left: auto;
     justify-content: right;
     color: rgb(36, 36, 36); 
-    border-radius: 20px;
     padding-right: 20px;
     padding-left: 20px;
     font-family: 'Archivo', sans-serif;
@@ -103,19 +101,16 @@ sup {
     cursor: pointer;
     outline: none;
     transition: all 0.3s ease;
-    border: none; 
     position: relative; 
     z-index: 1; 
 }
 
-/* Clases para controlar el efecto de letterpress */
 .mode-button.print-mode {
     
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.585), -1px -1px 1px rgba(255, 255, 255, 0.501);
 }
 
 .mode-button.digital-mode {
-    /* Efecto de letterpress para el modo inactivo */
     text-shadow: none;
 }
 
@@ -172,13 +167,12 @@ sup {
     background-color: #eae5dd;
 }
 
-/* Estilos para modo oscuro */
 .dark-mode p, .dark-mode a {
-    color: #eae5dd; /* Esto cambiará el color del texto de <p> y <a> en modo oscuro */
+    color: #eae5dd; 
 }
 
 .dark-mode {
-    background-color: #000000; /* Fondo oscuro para todo el cuerpo */
+    background-color: #000000; 
 }
 
 body.dark-mode {
@@ -261,8 +255,7 @@ body.dark-mode {
     font-size: 40px;
     text-align: center;
     padding: 10px 10px;
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s; /* Transición suave para el efecto al pasar el mouse */
+    transition: background-color 0.3s; 
     line-height: 30px;
   }
   
@@ -271,7 +264,7 @@ body.dark-mode {
   }
 
 .index{
-display: inline-flex;
+justify-content: center;
 padding-bottom: 50px;
 align-items: baseline;
 margin-top: 80px;
@@ -281,7 +274,7 @@ gap: 40px;
 
 .magazinetitle{
 
-    font-family:var( --font-text) ;
+    font-family:var( --font-title) ;
     font-size: 14px;
     
 }
@@ -295,12 +288,297 @@ gap: 40px;
     font-size: 12px;
   }
   
-  .flexbox-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px;
+  .dropdown-btn {
+    background: none;
+    border: none;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    outline: none;
+    position: relative; /* Para posicionar la flecha absolutamente */
+  }
+  
+  .dropdown-btn::after {
+    content: 'VIEW MORE'; /* Flecha hacia abajo */
+    font-size: 10px; /* Tamaño de la flecha */
+    font-family: var(--font-text);
+    position: absolute;
+    right: 0;
+    top: 10px; /* Ajusta según la alineación vertical necesaria */
+    transition: transform 0.3s ease;
+    padding-right: 10px;
+    padding-bottom: 15px;
+  }
+  
+  .dropdown-btn.active::after {
+    content: 'VIEW LESS';
+    opacity: 50%;
+  }
+  
+  .underline {
+    height: 1px;
+    background-color:grey; /* O el color que prefieras */
+    margin-top: 1px; /* Espacio entre el botón y la línea */
+    width:375px;
+    padding-left: 30px;
+  }
+  
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    font-size: 12px;
+    transition: max-height 0.2s ease-out;
+    padding-left: 15px;
+    padding-top: 10px;
+    line-height: 20px;
+  }
+
+.subc-title{
+
+    font-family:var( --font-title);
+    font-size: 50px;
+    margin:15px;
+    padding-top: 50px;
+}
+
+.subc-credits{
+    display: inline-flex;
+    flex-direction:row;
+    gap: 20px;
+    margin: 15px;
+    font-family: var(--font-title);
+    line-height: 20px;
+}
+ 
+#gallery-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 15px;
+
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    
+  }
+  
+  .gallery-image {
+    width: 100%;
+    display: block;
+    opacity: 5%; /* Opacidad inicial para todas las imágenes */
+    transition: opacity 6s ease; /* Efecto de transición suave para la opacidad */
     
   }
 
- 
+  @media (min-width: 750px){
+      .gallery-title {
+        width: 60%;
+      }
+      #gallery-container{
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        margin: 15px;
+    
+    }
+}
+  
+.gallery-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .gallery-item:hover .gallery-image {
+    opacity: 100%;
+  }
+  
+  .gallery-item:hover .gallery-title {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+  
+  .gallery-image {
+    width: 100%;
+    display: block;
+    opacity: 40%;
+    transition: opacity 0.3s ease;
+  }
+  
+  .gallery-title {
+    position: absolute;
+    width: 100%;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    opacity: 100%; 
+    transition: opacity 0.3s ease;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  }
+
+
+
+  /* ARTICLES */
+
+  .article-container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    padding-bottom: 30px;
+}
+
+.article-header h1 {
+    font-size: 50px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+}
+
+.first-text {
+    display: inline-flex;
+    gap: 100px;
+    align-items: flex-start;
+}
+
+.article-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 10px;
+    gap: 10px;
+}
+
+.article-content img {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin-left: 50px;
+}
+
+.article-footer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#article-text1 {
+    width: 100%;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: start;
+    letter-spacing: 0.25px;
+    padding-right: 50px;
+}
+
+.textandimage {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    gap: 160px;
+}
+
+#article-text2 {
+    width: 350px;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: start;
+    letter-spacing: 0.25px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+
+    .article-container {
+        max-width: 80%;
+        margin: 10px auto;
+        padding: 0px;
+    }
+    .article-header h1 {
+        font-size: 36px; /* Tamaño de fuente más pequeño para móvil */
+        margin-bottom: 20px; /* Menor margen para móvil */
+    }
+
+    .first-text,
+    .textandimage {
+        display: block; /* Alineación vertical en lugar de horizontal */
+        gap: 0;
+    }
+
+    .article-meta {
+        align-items: flex-start; /* Alinea el meta-texto a la izquierda */
+    }
+
+    .article-content img {
+        max-width: 100%; /* La imagen ocupa el ancho completo en móvil */
+        margin-left: 0; /* Centrar imagen sin margen izquierdo */
+        margin-bottom: 20px; /* Margen inferior después de la imagen */
+    }
+
+    #article-text1,
+    #article-text2 {
+        margin-top: 40px;
+        width: auto; /* Ancho automático para ajustarse al contenedor */
+        padding: 0 0px; /* Agregar un poco de padding a los lados */
+    }
+
+    .article-footer {
+        padding-top: 40px; 
+        padding-bottom: 40px;/* Menor padding superior para el footer en móvil */
+    }
+}
+  
+
+ #section{
+    font-size: 14px;
+  }
+
+em{
+    font-style: italic;
+}
+
+.buttonarticle{
+    display: flex;
+    justify-content: space-between; 
+    box-sizing: border-box; 
+    padding-bottom: 10px;
+}
+  
+#prev-article:hover, #next-article:hover {
+    opacity: 30%;
+
+  }
+
+  @media (min-width: 768px) {
+    .buttonarticle{
+        font-size: 20px;
+        display: flex;
+        padding-bottom: 40px;
+        border-radius: 20px;
+    
+    }
+    
+  }
