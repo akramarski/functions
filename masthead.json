@@ -41,7 +41,23 @@
       },
       {
         "role": "Senior fashion editors-at-large",
-        "name": "Agata Belcen, Ellie Grace Cumming"
+        "name": "Agata Belcen, Ellie Grace Cumming, Katy England, Nell Kalonji, Alister Mackie, Robbie Spencer"
+      }
+      ,
+      {
+        "role": "Contributing fashion editors",
+        "name": "Jordan Duddy, Ola Ebiti, Raphael Hirsch, Dogi Nesanir, Morgane Camille Nicolas, Oliver Rizzo, Isabelle Sayer, Molly Shilingford, Emma Wyman"
+      }
+      ,
+      {
+        "role": "Fashion assistant",
+        "name": "Precious Greham"
+      }
+    ],
+    "Photography": [
+      {
+        "role": "Photographic producer",
+        "name": "Beth Mingay"
       }
     ],
     "Design": [
@@ -50,14 +66,119 @@
         "name": "Charles Britton at STJ Studio"
       },
       {
-        "role": "Studio director at STJ Studio",
-        "name": "Alice Limer"
+        "role": "Studio director",
+        "name": "Alice Limer at STJ Studio"
+      }
+      ,
+      {
+        "role": "Designer",
+        "name": "Josh Croll at STJ Studio"
+      }
+      ,
+      {
+        "role": "Contributing art director",
+        "name": "Harriet Lodge at STJ Studio"
+      }
+    ],
+    "Features": [
+      {
+        "role": "Bookings editor",
+        "name": "Greg Krelenstein"
+      },
+      {
+        "role": "Chief sub-editor",
+        "name": "Sam Thackray"
+      },
+      {
+        "role": "Editorial assistant",
+        "name": "Gilda Bruno"
+      },
+      {
+        "role": "Editorial placement",
+        "name": "Iris Nicholls"
+      }
+    ],
+    "Pictures": [
+      {
+        "role": "Pictures",
+        "name": "Marili Andre, Mark Borthwich, Chaumount-Zaerpur, Jack Davison, Katrine De Bauwer, Marie Deteneuille, Roe Erthidge, Kim Gordon, Oliver Hadlee Pearch, Julia Hetta, etc"
       }
     ],
     "Text": [
+      {
+        "role": "Texts",
+        "name": "Amelia Abraham, Laura Allsop, Hilton Als, Sophie Bew, Violet Conroy, Emma Davidson, Alex Denney, Rose Dodd, SUsannah Frankel,etc"
+      }
     ],
     "Production": [
+      {
+        "role": "Group production manager",
+        "name": "Emily Moore"
+      },
+      {
+        "role": "Print and reprographics manager",
+        "name": "Steve Savigear"
+      },
+      {
+        "role": "Production controller",
+        "name": "Valeria Della Valle"
+      }
     ],
-    "Photography": [
+    "Publishing": [
+      {
+        "role": "Publishers",
+        "name": "Jefferson Hack, Rakin Waddell"
+      },
+      {
+        "role": "Publishing director",
+        "name": "Susanne Waddell"
+      },
+      {
+        "role": "Global publishing and commercial director",
+        "name": "Luke Robins"
+      },
+      {
+        "role": "Head of fashion-commercial",
+        "name": "Jocelyn Sital-Singh"
+      },
+      {
+        "role": "Commercial project manager",
+        "name": "Aleksandra Silwa"
+      }
+      
+    ],
+    "Distribution": [
+      {
+        "role": "Circulation manager",
+        "name": "Stuart White - stuart.white@dazedmedia.com"
+      },
+      {
+        "role": "Subscription enquiries",
+        "name": "info@boutiquemags.com"
+      },
+      {
+        "role": "Colour and repographics",
+        "name": "Tapestry"
+      }
+      
+    ],
+    "Anothermag": [
+      {
+        "role": "Editorial director",
+        "name": "Ted Stansfield"
+      },
+      {
+        "role": "Senior editor",
+        "name": "Dominique Sisley"
+      },
+      {
+        "role": "Social media editor",
+        "name": "George Pistachio"
+      },
+      {
+        "role": "Film editor",
+        "name": "Alex Denney"
+      }
+      
     ]
   }
