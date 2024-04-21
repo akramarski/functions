@@ -70,15 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
   
     dropdownButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling.nextElementSibling; 
-        btn.classList.toggle('active'); 
+        const content = btn.nextElementSibling.nextElementSibling; // Obtiene el contenido que está después de la línea
+        btn.classList.toggle('active'); // Alterna la clase para rotar la flecha
   
         if (content.style.maxHeight) {
           content.style.maxHeight = null;
         } else {
+          // Asegúrate de cerrar todos los demás contenidos desplegables
           document.querySelectorAll('.dropdown-content').forEach(otherContent => {
             otherContent.style.maxHeight = null;
           });
+          // Expande el contenido seleccionado
           content.style.maxHeight = content.scrollHeight + 'px';
         }
       });
@@ -177,5 +179,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryContainer = document.getElementById('gallery-container');
+    const images = document.querySelectorAll('.gallery-image');
+  
+    function handleScroll() {
+      const windowHeight = window.innerHeight;
+      images.forEach(img => {
+        const imageTop = img.getBoundingClientRect().top;
+        if (imageTop < windowHeight - 100) { // 100px antes de que la imagen entre completamente en la vista
+          img.style.opacity = 1; // Cambia la opacidad a 1 cuando la imagen está en la vista
+        }
+      });
+    }
+  
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Llama a handleScroll al cargar la página para ajustar cualquier imagen inicialmente visible
+  });
 
-        
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('images.json') // Actualiza esta ruta al archivo JSON
+        .then(response => response.json())
+        .then(data => {
+            const wrapper = document.querySelector('.scroll-wrapper2');
+            data.forEach(item => {
+                const container = document.createElement('div');
+                container.className = 'image-container';
+
+                const img = document.createElement('img');
+                img.src = item.imageUrl;
+
+                const button = document.createElement('button');
+                button.className = 'info-toggle';
+                button.textContent = '+';
+
+                const info = document.createElement('div');
+                info.className = 'image-info';
+
+                const p = document.createElement('p');
+                p.textContent = item.info;
+
+                info.appendChild(p);
+                container.appendChild(img);
+                container.appendChild(button);
+                container.appendChild(info);
+                wrapper.appendChild(container);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching the image data:', error);
+        });
+});
