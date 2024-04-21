@@ -1,16 +1,17 @@
 [
-    {
+    {"id": 1,
       "title": "Benny Safdie, writer, director and actor, on physics",
       "image": "https://images-prod.anothermag.com/571/azure/another-prod/440/4/444397.jpg",
-      "articleUrl": "article.html?id=1"
+      "button": "READ MORE",
+      "secondJsonUrl": "articles.json"
     },
     {
-      "title": "Tala Madani, artis, on navigating the now",
+      "title": "Tala Madani, artits, on navigating the now",
       "image": "https://images-prod.anothermag.com/570/azure/another-prod/440/5/445696.jpg",
       "articleUrl": "path_to_article_2.html"
     },
     {
-      "title": "Karis Jagger and Fabienne Toback, producers, on Losing My Edge",
+      "title": "Karis Jagger and Fabienne Toback, producers,on Losing My Edge",
       "image": "https://images-prod.anothermag.com/570/azure/another-prod/440/5/445801.jpg",
       "articleUrl": "path_to_article_2.html"
     }
@@ -34,7 +35,7 @@
     }
     ,
     {
-      "title": "Charles Fine, artis, on Mexico ",
+      "title": "Charles Fine, artist, on Mexico ",
       "image": "https://article-imgs.scribdassets.com/46mdclqgzkc45jiw/images/fileTTRRRFG6.jpg",
       "articleUrl": "path_to_article_2.html"
     }
