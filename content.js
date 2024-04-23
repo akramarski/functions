@@ -72,3 +72,33 @@ document.addEventListener('DOMContentLoaded', () => {
     decreaseFontBtn.addEventListener('click', () => changeFontSize(false));
     toggleContrastBtn.addEventListener('click', toggleContrast);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecciona todos los elementos que quieres revelar
+    const elementsToReveal = document.querySelectorAll('.reveal');
+  
+    // Función callback para el observer
+    const revealCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        // Si el elemento está en el viewport, añade la clase 'active'
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          // Opcionalmente, desvincula el observer una vez que el elemento ha sido revelado
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+  
+    // Opciones para el IntersectionObserver
+    const revealOptions = {
+      threshold: 0.1, // 10% del elemento debe estar visible para activarse
+    };
+  
+    // Crea el observer con la función callback y las opciones
+    const observer = new IntersectionObserver(revealCallback, revealOptions);
+  
+    // Vincula el observer a cada elemento
+    elementsToReveal.forEach(element => {
+      observer.observe(element);
+    });
+  });
