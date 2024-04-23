@@ -1,57 +1,76 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-    const scrollContainer = document.querySelector('.scroll-container');
-    if (scrollContainer) {
-        function scrollRight() {
-            scrollContainer.scrollBy({left: 200, behavior: 'smooth'});
-        }
-
-        function scrollLeft() {
-            scrollContainer.scrollBy({left: -200, behavior: 'smooth'});
-        }
-
-    
-    }
-
-});
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('logos.json')
+  loadLogos();
+  loadrMasthead();
+  loadGallery();
+  loadArticle();
+  doModal();
+  dorScroll();
+  dorLoadDImages();
+
+  // MOVE TO OTHER ARTICLE FUNCTION 
+  const nextArticleBtn = document.getElementById('next-article');
+  const prevArticleBtn = document.getElementById('prev-article');
+  if (nextArticleBtn && prevArticleBtn) {
+      nextArticleBtn.addEventListener('click', () => {
+        loadArticle(currentIndex + 1);
+      });
+
+      prevArticleBtn.addEventListener('click', () => {
+          if (currentIndex > 0) {
+              loadArticle(currentIndex - 1);
+          }
+      });
+  }
+});
+// lOGOS JSON
+function loadLogos() {
+  fetch('logos.json')
       .then(response => response.json())
       .then(logosData => {
-        const logosContainer = document.getElementById('logos-container');
-        logosData.forEach(brand => {
-          const brandElement = document.createElement('p');
-          brandElement.className = 'brand-name';
-          brandElement.textContent = brand.name;
-          brandElement.setAttribute('data-img', brand.image);
-          brandElement.addEventListener('click', function() {
-            const expandedImg = document.getElementById('expanded-img');
-            const modal = document.getElementById('modal');
-            expandedImg.src = this.getAttribute('data-img');
-            modal.style.display = 'block';
-          });
-          logosContainer.appendChild(brandElement);
-        });
+          const logosContainer = document.getElementById('logos-container');
+          if (logosContainer) {
+              logosData.forEach(brand => {
+                  const brandElement = document.createElement('p');
+                  brandElement.className = 'brand-name';
+                  brandElement.textContent = brand.name;
+                  brandElement.setAttribute('data-img', brand.image);
+                  brandElement.addEventListener('click', function() {
+                      const expandedImg = document.getElementById('expanded-img');
+                      const modal = document.getElementById('modal');
+                      if (expandedImg && modal) {
+                          expandedImg.src = this.getAttribute('data-img');
+                          modal.style.display = 'block';
+                      }
+                  });
+                  logosContainer.appendChild(brandElement);
+              });
+          }
       })
       .catch(error => console.error('Error loading logos:', error));
-  
-    fetch('masthead.json')
+}
+
+// MASTERHEAD JSON
+function loadrMasthead() {
+  fetch('masthead.json')
       .then(response => response.json())
       .then(mastheadData => {
-        Object.keys(mastheadData).forEach(section => {
-          const sectionDiv = document.getElementById(section.toLowerCase());
-          if (sectionDiv) {
-            mastheadData[section].forEach(person => {
-              const roleElement = document.createElement('div');
-              roleElement.className = 'role';
-              roleElement.textContent = `${person.role}: ${person.name}`;
-              sectionDiv.appendChild(roleElement);
-            });
-          }
-        });
+          Object.keys(mastheadData).forEach(section => {
+              const sectionDiv = document.querySelector(`#${section} .dropdown-content`);
+              const button = document.querySelector(`#${section} .dropdown-btn`);
+              if (sectionDiv && button) {
+                  mastheadData[section].forEach(person => {
+                      const roleElement = document.createElement('div');
+                      roleElement.className = 'role';
+                      roleElement.textContent = `${person.role}: ${person.name}`;
+                      sectionDiv.appendChild(roleElement);
+                  });
+
+                  button.addEventListener('click', () => toggleDropdown(sectionDiv, button));
+              }
+          });
       })
       .catch(error => console.error('Error loading masthead data:', error));
-  
-    const closeButton = document.getElementById('close-btn');
+      const closeButton = document.getElementById('close-btn');
     closeButton.addEventListener('click', () => {
       const modal = document.getElementById('modal');
       modal.style.display = 'none';
@@ -61,90 +80,193 @@ document.addEventListener('DOMContentLoaded', () => {
       const modal = document.getElementById('modal');
       if (event.target === modal) {
         modal.style.display = 'none';
-      }
-    };
-  });
+      }}
+}
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const dropdownButtons = document.querySelectorAll('.dropdown-btn');
-  
-    dropdownButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling.nextElementSibling; // Obtiene el contenido que está después de la línea
-        btn.classList.toggle('active'); // Alterna la clase para rotar la flecha
-  
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          // Asegúrate de cerrar todos los demás contenidos desplegables
-          document.querySelectorAll('.dropdown-content').forEach(otherContent => {
-            otherContent.style.maxHeight = null;
-          });
-          // Expande el contenido seleccionado
-          content.style.maxHeight = content.scrollHeight + 'px';
-        }
+// DROPDOWN CREDITS - MASTERHEAD
+function toggleDropdown(contentDiv, button) {
+  if (contentDiv.style.maxHeight) {
+      contentDiv.style.maxHeight = null;
+      button.classList.remove('active'); 
+  } else {
+     
+      document.querySelectorAll('.dropdown-content').forEach(div => {
+          div.style.maxHeight = null;
       });
-    });
-  });
+      document.querySelectorAll('.dropdown-btn').forEach(btn => {
+          btn.classList.remove('active'); 
+      });
 
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('gallery.json')
+      contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+      button.classList.add('active'); 
+  }
+}
+
+// GALLERY DESKTOP
+function loadGalleryDesktop() {
+  console.log("Cargando galería para desktop");
+  fetch('gallery.json')
       .then(response => response.json())
       .then(articles => {
-        const galleryContainer = document.getElementById('gallery-container');
-  
-        articles.forEach(article => {
-          const articleElement = document.createElement('div');
-          articleElement.className = 'gallery-item';
-  
-          const imageElement = document.createElement('img');
-          imageElement.src = article.image;
-          imageElement.alt = article.title;
-          imageElement.className = 'gallery-image';
-  
-          const titleElement = document.createElement('div');
-          titleElement.className = 'gallery-title';
-          titleElement.textContent = article.title;
-  
-          articleElement.appendChild(imageElement);
-          articleElement.appendChild(titleElement);
-  
-          articleElement.addEventListener('click', () => {
-            window.location.href = article.articleUrl; 
+          const galleryContainer = document.getElementById('gallery-container');
+          galleryContainer.innerHTML = ''; 
+
+          articles.forEach(article => {
+              const articleElement = document.createElement('div');
+              articleElement.className = 'gallery-item';
+
+              const imageElement = document.createElement('img');
+              imageElement.src = article.image;
+              imageElement.alt = article.title;
+              imageElement.className = 'gallery-image';
+
+              articleElement.appendChild(imageElement);
+              galleryContainer.appendChild(articleElement);
+
+              imageElement.onmouseover = () => {
+                  const titleOverlay = document.getElementById('gallery-title-overlay');
+                  titleOverlay.textContent = article.title;
+                  titleOverlay.style.display = 'block'; 
+              };
+
+              imageElement.onmouseleave = () => {
+                  const titleOverlay = document.getElementById('gallery-title-overlay');
+                  titleOverlay.textContent = '';
+                  titleOverlay.style.display = 'none'; 
+              };
+
+              imageElement.onclick = () => {
+                  window.location.href = article.articleUrl; 
+              };
           });
-  
-          galleryContainer.appendChild(articleElement);
-        });
       })
-      .catch(error => {
-        console.error('Error fetching gallery data:', error);
-      });
-  });
+      .catch(error => console.error('Error fetching gallery data:', error));
+}
 
+// GALLERY MOBILE
+function loadGalleryMobile() {
+  console.log("Cargando galería para móvil");
+  fetch('gallery.json')
+      .then(response => response.json())
+      .then(articles => {
+          const galleryContainer = document.getElementById('gallery-container');
+          galleryContainer.innerHTML = ''; 
 
-          // ARTICLES
-          document.addEventListener('DOMContentLoaded', () => {
-            fetch('articles.json')
-              .then(response => response.json())
-              .then(articles => {
-                const article = articles[0];
-                document.getElementById('article-title').innerHTML = article.title;
-                document.getElementById('article-author').textContent = article.author;
-                document.getElementById('article-text1').innerHTML = article.text1;
-                document.getElementById('article-text2').innerHTML = article.text2;
-                document.getElementById('article-image').src = article.imageUrl;
-                document.getElementById('article-footer').innerHTML = article.footer;
-              })
-              .catch(error => {
-                console.error('Error fetching article data:', error);
+          articles.forEach(article => {
+              const articleElement = document.createElement('div');
+              articleElement.className = 'gallery-item';
+
+              const imageElement = document.createElement('img');
+              imageElement.src = article.image;
+              imageElement.alt = article.title;
+              imageElement.className = 'gallery-image';
+
+              const infoToggleButton = document.createElement('button');
+              infoToggleButton.className = 'info-toggle';
+              infoToggleButton.textContent = '+';
+
+              const infoContainer = document.createElement('div');
+              infoContainer.className = 'image-info-container';
+              infoContainer.style.display = 'none';
+
+              const titleElement = document.createElement('div');
+              titleElement.className = 'image-info-title';
+              titleElement.textContent = article.title;
+
+              const readMoreButton = document.createElement('a');
+              readMoreButton.className = 'image-info-read-more';
+              readMoreButton.textContent = 'READ MORE';
+              readMoreButton.href = article.articleUrl;
+              readMoreButton.target = '_blank'; 
+
+              infoContainer.appendChild(titleElement);
+              infoContainer.appendChild(readMoreButton);
+
+              articleElement.appendChild(imageElement);
+              articleElement.appendChild(infoToggleButton);
+              articleElement.appendChild(infoContainer);
+
+              infoToggleButton.addEventListener('click', function() {
+                  const isInfoVisible = infoContainer.style.display === 'block';
+                  infoContainer.style.display = isInfoVisible ? 'none' : 'block';
+                  this.textContent = isInfoVisible ? '+' : '-';
+              });
+
+              galleryContainer.appendChild(articleElement);
+          });
+      })
+      .catch(error => console.error('Error fetching gallery data:', error));
+}
+
+// FUNCTION DIFFERENT GALLERY FOR MOBILE AND DESKTOP
+function applyLoadGallery() {
+  if (window.innerWidth <= 768) {
+      loadGalleryMobile(); 
+  } else {
+      loadGalleryDesktop(); 
+  }
+}
+
+document.addEventListener('DOMContentLoaded', applyLoadGallery);
+window.addEventListener('resize',  applyLoadGallery);
+
+let currentIndex = 0; 
+
+// GALLERY PHOTOGRAPHY
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('images.json')
+      .then(response => response.json())
+      .then(data => {
+          const wrapper = document.querySelector('.scroll-wrapper2');
+          data.forEach(item => {
+              const container = document.createElement('div');
+              container.className = 'image-container';
+
+              const img = document.createElement('img');
+              img.src = item.imageUrl;
+
+              const button = document.createElement('button');
+              button.className = 'info-toggle';
+              button.textContent = '+';
+
+              const info = document.createElement('div');
+              info.className = 'image-info';
+              info.style.display = 'none'; 
+
+              const p = document.createElement('p');
+              p.textContent = item.info;
+              info.appendChild(p);
+
+              container.appendChild(img);
+              container.appendChild(button);
+              container.appendChild(info);
+              wrapper.appendChild(container);
+              button.addEventListener('click', function() {
+                  const isInfoVisible = info.style.display === 'block';
+                  info.style.display = isInfoVisible ? 'none' : 'block';
+                  button.textContent = isInfoVisible ? '+' : '-';
               });
           });
+      })
+      .catch(error => {
+          console.error('Error fetching the image data:', error);
+      });
+});
 
-          let currentIndex = 0; 
 
+// ARTCICLES - ANTOHER MAGAZINE
+
+// ARTICLES JSON
 function loadArticle(index) {
+  console.log(`Load article with index: ${index}`); 
   fetch('articles.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(articles => {
       if (index >= 0 && index < articles.length) {
         const article = articles[index];
@@ -156,77 +278,40 @@ function loadArticle(index) {
         document.getElementById('article-footer').innerHTML = article.footer;
         currentIndex = index; 
       } else {
-        console.log('No more articles available.');
+        console.log('No more articles available.'); 
       }
     })
     .catch(error => {
-      console.error('Error fetching article data:', error);
+      console.error('Error fetching article data:', error); 
     });
 }
+
+// REDEFINE FUNCTION ARTICLE NAVEGATION
 
 document.addEventListener('DOMContentLoaded', () => {
   loadArticle(currentIndex); 
 
-  document.getElementById('next-article').addEventListener('click', () => {
-    loadArticle(currentIndex + 1);
-  });
+  const nextArticleButton = document.getElementById('next-article');
+  const prevArticleButton = document.getElementById('prev-article');
 
+  if (nextArticleButton) {
+    nextArticleButton.addEventListener('click', () => {
+      if (currentIndex < Infinity) { 
+        loadArticle(currentIndex + 1);
+      }
+    });
+  } else {
+    console.error('Button next-article not found');
+  }
 
-  document.getElementById('prev-article').addEventListener('click', () => {
-    if (currentIndex > 0) {
-      loadArticle(currentIndex - 1);
-    }
-  });
+  if (prevArticleButton) {
+    prevArticleButton.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        loadArticle(currentIndex - 1);
+      }
+    });
+  } else {
+    console.error('Button prev-article not found');
+  }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const galleryContainer = document.getElementById('gallery-container');
-    const images = document.querySelectorAll('.gallery-image');
-  
-    function handleScroll() {
-      const windowHeight = window.innerHeight;
-      images.forEach(img => {
-        const imageTop = img.getBoundingClientRect().top;
-        if (imageTop < windowHeight - 100) { // 100px antes de que la imagen entre completamente en la vista
-          img.style.opacity = 1; // Cambia la opacidad a 1 cuando la imagen está en la vista
-        }
-      });
-    }
-  
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Llama a handleScroll al cargar la página para ajustar cualquier imagen inicialmente visible
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('images.json') // Actualiza esta ruta al archivo JSON
-        .then(response => response.json())
-        .then(data => {
-            const wrapper = document.querySelector('.scroll-wrapper2');
-            data.forEach(item => {
-                const container = document.createElement('div');
-                container.className = 'image-container';
-
-                const img = document.createElement('img');
-                img.src = item.imageUrl;
-
-                const button = document.createElement('button');
-                button.className = 'info-toggle';
-                button.textContent = '+';
-
-                const info = document.createElement('div');
-                info.className = 'image-info';
-
-                const p = document.createElement('p');
-                p.textContent = item.info;
-
-                info.appendChild(p);
-                container.appendChild(img);
-                container.appendChild(button);
-                container.appendChild(info);
-                wrapper.appendChild(container);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching the image data:', error);
-        });
-});
