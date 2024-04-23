@@ -14,9 +14,21 @@
     font-size: 16px; 
 }
 
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* CSS para animar la entrada de los elementos */
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .dark-mode {
     --background-color: #000000;
-    --text-color: #eae5dd;
+    --text-color: white;
 }
 
 body {
@@ -227,29 +239,27 @@ body.dark-mode {
     .scroll-wrapper img {
         display: inline-block;
         width: auto;       /* Mantiene la proporción de la imagen */
-        max-width: 100%;   /* Limita el ancho máximo para evitar desbordamiento */
+        max-width: 100vw;   /* Limita el ancho máximo para evitar desbordamiento */
         height: auto;      /* Mantiene la proporción de la imagen basada en el ancho */
-        max-height: 500px; /* Altura máxima de la imagen */
-        margin-right: 10px; /* Espacio entre imágenes */
+        max-height: 100vh; /* Altura máxima de la imagen */
+        margin-right: 0px; /* Espacio entre imágenes */
 }
 
 .scroll-container2 {
-    overflow-x: auto;
-    white-space: nowrap;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-    .scroll-wrapper2 img {
-        display: inline-block;
-        width: auto;       
-        max-width: 100%;   
-        height: auto;     
-        max-height: 500px; 
-        margin-right: 15px; 
+.scroll-wrapper2 img {
+  display: block;
+    width: auto;       /* Mantiene la proporción de aspecto */
+    max-width: 100%;   /* Se asegura de que la imagen no sea más ancha que su contenedor */
+    height: 500px;     /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área asignada sin distorsionarse */
+    padding-right: 10px; 
+    vertical-align: top}
 
-
-    
-     
-}
+ 
 
 .advertisement{
     font-family:var( --font-text) ;
@@ -259,10 +269,7 @@ body.dark-mode {
 }
 @media (min-width: 768px){
     .scroll-wrapper img{
-    display: inline-block;
-    width: auto;       
-    max-width: 100%;   
-    height: auto;     
+    display: inline-block;   
     max-height: 800px; 
     margin-right: 10px; 
     }
@@ -273,7 +280,6 @@ body.dark-mode {
         max-width: 100%;   
         height: auto;     
         max-height: 600px; 
-        margin-right: 10px; 
 
         }
 
@@ -285,34 +291,51 @@ body.dark-mode {
         padding-bottom: 50px;
         text-align: center;
     }
+    
 }
 
 
 
 #logos-container{
     text-align: center;
-    margin: 10px;
+    margin: 15px;
 }
 .modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
   }
   
   .modal-content {
     position: relative;
-    margin: 10% auto;
     padding: 20px;
-    width: 80%;
-    max-width: 700px;
+    max-width: 600px; /* o cualquier anchura máxima que prefieras */
+    width: 90%; /* o la anchura relativa que prefieras */
+    margin: auto; /* Esto centrará el elemento horizontalmente en un bloque, pero flexbox se encarga de esto ahora */
     animation-name: animatetop;
     animation-duration: 0.4s;
   }
+
+  @media(min-width:768px)and (max-width:1025px){
+    .modal-content {
+      width: 60%; /* o la anchura relativa que prefieras */
   
+    }
+  }
+  
+  @media(min-width:1000px){
+    .modal-content {
+      width: 45%; /* o la anchura relativa que prefieras */
+  
+    }
+  }
   .close-btn {
     color: #aaaaaa;
     float: right;
@@ -407,7 +430,7 @@ body.dark-mode {
     padding-left: 15px;
     padding-bottom: 10px;
     padding-top: 10px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     cursor: pointer;
     width: 100%;
@@ -444,8 +467,8 @@ body.dark-mode {
   .dropdown-content {
     max-height: 0;
     overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-family: var(--font-text);
+    font-size: 12px;
     transition: max-height 0.2s ease-out;
     padding-left: 15px;
     padding-top: 10px;
@@ -500,63 +523,122 @@ body.dark-mode {
     font-family: var(--font-another);
     line-height: 30px;
 }
-.number {
-    font-size: 500px;
-    font-family: var(--font-another);
-    line-height: 20px;
-    font-weight: 200;
-    margin-top: -40px;
+
+@media(max-width: 1023px) {
+  .number, .number2{
+    opacity: 0%;
+  }
+
+}
+
+
+/* Media queries para tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .advertisement{
+    padding-top: 80px;
+    font-size: 14px;
+}
+  .brand-name {
+    font-size: 50px;
     padding-left: 15px;
-    margin-bottom: 200px;
+    padding-right: 15px;
+    line-height: 50px;
+  }
+  .index {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .index p{
+    font-size: 16px;
+      }
+
+    .masthead-container {
+      display: flex; /* Usar flex para distribuir las columnas */
+      justify-content: space-between; /* Distribuir espacio entre las columnas */
+      align-items: stretch; /* Hacer que las columnas se estiren para llenar el contenedor */
+      width: 100%; /* Asegurarse de que ocupa todo el ancho */
+      margin: 0; /* Eliminar cualquier margen exterior */
+      padding: 20px; /* Eliminar cualquier relleno */
+    }
+    .dropdown-btn {
+      padding-left: 0px;
+    }
+
+    .colum1, .colum2, .colum3, .colum4 {
+      display: flex;
+      flex-direction: column; 
+      width: calc(25% - 40px); 
+      margin: 10px; 
+  }
+
+.subc-title{
+  line-height: 80px;
+  font-size: 70px;
+  width: 90%;
+  margin-left:30px;
+  padding-top: 60px;
+}
+
+.subc-credits{
+  gap: 60px;
+  margin-left:55px;
+  letter-spacing: 0px;
+  line-height: 20px;
+  font-size: 14px;
+}
+.gallery-container{
+  grid-template-columns: repeat(3, 1fr);
+}
+}
+
+/* Media queries para escritorio */
+@media (min-width: 1024px) {
+  .subc-title{
+    line-height: 150px;
+    font-size: 120px;
+    width: 80%;
+    margin-left:55px;
+    padding-top: 150px;
+}
+
+.subc-credits{
+    gap: 100px;
+    margin-left:55px;
+    letter-spacing: 1px;
+    line-height: 25px;
+}
+  .number {
+    font-family: var(--font-another);
+    font-size: 700px;
+    position: absolute; /* Posición absoluta con respecto a un ancestro posicionado */
+    right: 3%; /* Alineación a la derecha */
+    top: 325%; /* Ajusta esto para alinear verticalmente como lo necesites */
+    transform: translateY(-50%); /* Centrar verticalmente respecto a su posición */
+    text-align: right; /* Alinear texto a la derecha */
+    /* Resto de tus estilos */
 }
 .number2 {
-    font-size: 500px;
-    font-family: var(--font-another);
-    line-height: 20px;
-    font-weight: 200;
-    margin-top: 200px;
-    padding-left: 15px;
-    margin-bottom: 200px;
+  font-family: var(--font-another);
+  position: absolute; /* Posición absoluta en relación al contenedor */
+  font-size: 700px; /* Tamaño de fuente para escritorio */
+  right: 0; /* Alineación a la derecha */
+  top: 515%; /* Ajusta esto para alinear verticalmente como desees */
+  transform: translateY(-50%); /* Centrar verticalmente respecto a su posición */
+  text-align: right; /* Alinear texto a la derecha */
+  /* Resto de tus estilos de escritorio aquí */
 }
 
-@media (min-width: 768px) {
-    .subc-title{
-        line-height: 150px;
-        font-size: 120px;
-        width: 80%;
-        margin-left:55px;
-        padding-top: 150px;
-    }
-    
-    .subc-credits{
-        gap: 400px;
-        margin-left:55px;
-        letter-spacing: 1px;
-        line-height: 25px;
-    }
-
-    .number{
-        font-size: 700px;
-        line-height: 20px;
-        font-weight: 200;
-        margin-top: -270px;
-        padding-left: 900px;
-        margin-bottom: 400px;
-        text-align: end;
-    }
-    .number2 {
-        font-size: 700px;
-        line-height: 20px;
-        font-weight: 200;
-        margin-top: -100px;
-        padding-left: 900px;
-        margin-bottom: 400px;
-        text-align: end;
-    }
-
-    
-}
+.image-container {
+  margin-top: 300px;
+    padding-bottom: 80px;
  
+}
+}
+
+
 /* Estilos base para móviles (sin media query) */
 #gallery-container {
     display: grid;
@@ -592,7 +674,8 @@ body.dark-mode {
       opacity: 0.1; /* Opacidad inicial para móvil */
     }
   }
-  @media (min-width: 768px) {
+    
+  @media (min-width: 1024px) {
     #gallery-container {
       grid-template-columns: repeat(5, 1fr);
       margin: 55px;
@@ -606,71 +689,190 @@ body.dark-mode {
   
     .gallery-item {
       position: relative;
-      display: inline-block;
-    }
-    
-    .gallery-image {
-      display: block; /* Asegura que la imagen no tenga espacio extra debajo */
-      width: 100%; /* Opcional: depende del diseño deseado */
-    }
-    
-    .gallery-button {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-      padding: 8px 16px;
-      background-color: rgba(255, 255, 255, 0.7);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    
-    .gallery-item:hover .gallery-button {
-      display: block;
-    }
+      overflow: hidden;
+      padding-bottom: 50px;
   }
+  
+  .gallery-image {
+      width: 100%;
+      transition: opacity 0.3s ease;
+      opacity: 0.3; /* Inicia con opacidad baja */
+  }
+  
+  .gallery-title-overlay {
+    display: none;
+    width: 500px;
+    font-family: var(--font-another);
+    font-style: italic;
+    font-size: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1000;
+}
+  
+  /* Al pasar el mouse sobre la imagen, cambia la opacidad */
+  .gallery-item:hover .gallery-image {
+      opacity: 1; /* Imagen completamente visible en hover */
+  }
+  
+  /* Estilo del contenedor de la galería para detectar el hover */
+  #gallery-container:hover .gallery-title-overlay {
+      display: block; /* Muestra el título en el hover del contenedor */
+  }
+  }
+
+
+  @media (max-width: 768px) { /* Ajusta el 768px según el breakpoint de tu diseño móvil */
+    .gallery-item {
+        position: relative;
+    }
+
+    .gallery-image {
+        opacity: 1; /* Imágenes completamente visibles en móvil */
+        transition: opacity 0.3s ease;
+    }
+
+    /* El overlay y el botón estarán ocultos por defecto */
+    .gallery-title-overlay, .read-more-button {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Fondo oscuro difuminado */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        z-index: 1000; /* Por encima de otros elementos */
+    }
+
+    .gallery-title {
+        color: white;
+        font-size: 1.5em; /* Tamaño de fuente más grande para móvil */
+        padding: 20px; /* Espacio alrededor del texto */
+        background: rgba(0, 0, 0, 0.7); /* Fondo semitransparente detrás del título */
+    }
+
+    .read-more-button {
+        display: inline-block;
+        margin-top: 20px; /* Espacio entre el título y el botón */
+        padding: 10px 20px;
+        background: white;
+        color: black;
+        text-decoration: none; /* Remover subrayado de enlaces */
+        font-weight: bold;
+    }
+}
+@media(max-width:768px){
+.gallery-item {
+  position: relative;
+  /* Otros estilos que necesites para .gallery-item */
+}
+
+.image-info-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; /* O la anchura que prefieras */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  align-content: center;
+  text-align: center;
+  /* Otros estilos para ajustar la apariencia de la información desplegable */
+  
+}
+
+.image-info-title {
+  /* Estilos para el título */
+  font-family: var(--font-another);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 20px;
+  margin: 10px;
+  color: white;
+
+}
+
+.image-info-read-more {
+  font-family: var(--font-text);
+  font-size: 10px;
+  display: block; /* o 'inline-block', según tus preferencias */
+  margin-top: 5px; /* Espacio encima del botón */
+  /* Otros estilos para el botón */
+  color: white;
+  
+
+}
+}
 
 
 .image-container {
     position: relative;
     display: inline-block;
-      margin-top: 0;
+      margin-bottom: 80px;
    
 }
 
+
+
 .info-toggle {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  position: absolute;
+  bottom: 10px;  /* Ubica el botón a 10px desde el fondo del contenedor */
+  right: 18px;   /* Mantiene el botón a 10px desde el lado derecho */
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  z-index: 10;
+  border-radius: 50%;
+  font-family: var(--font-text);
+}
+
+@media(min-width:768px){
+  .info-toggle {
+    bottom: 30px;  /* Ubica el botón a 10px desde el fondo del contenedor */
+    right: 30px;   /* Mantiene el botón a 10px desde el lado derecho */
     width: 30px;
     height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.75);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 12px;
-    z-index: 10;
-    border-radius: 50%;
-    font-family: var(--font-text);
+  }
 }
+
+
+@media(min-width:1024px){
+  .info-toggle {
+    bottom: 100px;  /* Ubica el botón a 10px desde el fondo del contenedor */
+    right: 30px;   /* Mantiene el botón a 10px desde el lado derecho */
+    width: 30px;
+    height: 30px;
+  }
+  .image-container {
+      margin-bottom: 0px;
+   
+}
+}
+
 
 .image-info {
     display: none; 
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    max-height: 60px; 
+    right: 10px;
+    min-height: 60px; 
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     padding-top: 15px;
-    padding-right: 50px;
     padding-left: 15px;
     box-sizing: border-box;
     z-index: 2;
@@ -679,9 +881,30 @@ body.dark-mode {
     overflow-wrap: break-word; 
     white-space: normal; 
     font-family: var(--font-another);
-    font-size: 10px;
+    line-height: 15px;
+    font-size: 12px;
 }
 
+@media(min-width:500px){
+
+.image-info {
+  line-height: 20px;
+  font-size: 14px;
+  min-height: 80px; 
+}
+}
+
+@media(min-width:1023px){
+
+  .image-info {
+    line-height: 22px;
+    font-size: 16px;
+    min-height: 100px; 
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  }
 
 
   /* ARTICLES */
