@@ -56,11 +56,11 @@ function loadrMasthead() {
       .then(mastheadData => {
           Object.keys(mastheadData).forEach(section => {
               const sectionDiv = document.querySelector(`#${section} .dropdown-content`);
-              const button = document.querySelector(`#${section} .dropdown-btn`);
+              const button = document.querySelector(`#${section} .dropdown-btn `);
               if (sectionDiv && button) {
                   mastheadData[section].forEach(person => {
                       const roleElement = document.createElement('div');
-                      roleElement.className = 'role';
+                      roleElement.className = 'role dynamic-content ';
                       roleElement.textContent = `${person.role}: ${person.name}`;
                       sectionDiv.appendChild(roleElement);
                   });
@@ -90,7 +90,7 @@ function toggleDropdown(contentDiv, button) {
       button.classList.remove('active'); 
   } else {
      
-      document.querySelectorAll('.dropdown-content').forEach(div => {
+      document.querySelectorAll('.dropdown-content dynamic-content').forEach(div => {
           div.style.maxHeight = null;
       });
       document.querySelectorAll('.dropdown-btn').forEach(btn => {
@@ -257,9 +257,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ARTCICLES - ANTOHER MAGAZINE
 
-// ARTICLES JSON
+// ARTICLES JSON WITH DYNAMIC-CONTENT TO APPLY FONT DISPLAY TOGGLE
 function loadArticle(index) {
-  console.log(`Load article with index: ${index}`); 
+  console.log(`Load article with index: ${index}`);
   fetch('articles.json')
     .then(response => {
       if (!response.ok) {
@@ -270,24 +270,101 @@ function loadArticle(index) {
     .then(articles => {
       if (index >= 0 && index < articles.length) {
         const article = articles[index];
-        document.getElementById('article-title').innerHTML = article.title;
-        document.getElementById('article-author').textContent = article.author;
-        document.getElementById('article-text1').innerHTML = article.text1;
-        document.getElementById('article-text2').innerHTML = article.text2;
+        const title = document.getElementById('article-title');
+        title.innerHTML = article.title;
+        title.classList.add('dynamic-content');
+        
+        const author = document.getElementById('article-author');
+        author.textContent = article.author;
+        author.classList.add('dynamic-content');
+
+        const text1 = document.getElementById('article-text1');
+        text1.innerHTML = article.text1;
+        text1.classList.add('dynamic-content');
+
+        const text2 = document.getElementById('article-text2');
+        text2.innerHTML = article.text2;
+        text2.classList.add('dynamic-content');
+
         document.getElementById('article-image').src = article.imageUrl;
-        document.getElementById('article-footer').innerHTML = article.footer;
-        currentIndex = index; 
+        
+        const footer = document.getElementById('article-footer');
+        footer.innerHTML = article.footer;
+        footer.classList.add('dynamic-content');
+
+        currentIndex = index;
       } else {
-        console.log('No more articles available.'); 
+        console.log('No more articles available.');
       }
     })
     .catch(error => {
-      console.error('Error fetching article data:', error); 
+      console.error('Error fetching article data:', error);
     });
-}
+}  
+
+// CONNECT ARTICLES WITH ID NOT WORKING COMPLEATLY 
+fetch('gallery.json')
+  .then(response => response.json())
+  .then(data => {
+    const galleryContainer = document.getElementById('gallery-container');
+    data.forEach(article => {
+      const articleElement = document.createElement('div');
+      articleElement.className = 'gallery-item';
+
+      const imageElement = document.createElement('img');
+      imageElement.src = article.image;
+      imageElement.alt = article.title;
+
+      const titleElement = document.createElement('h3');
+      titleElement.textContent = article.title;
+
+      const readMoreButton = document.createElement('a');
+      readMoreButton.href = `articles.html?articleId=${article.id}`;  
+      readMoreButton.textContent = 'Read More';
+      readMoreButton.className = 'read-more-button';
+
+      articleElement.appendChild(imageElement);
+      articleElement.appendChild(titleElement);
+      articleElement.appendChild(readMoreButton);
+      galleryContainer.appendChild(articleElement);
+    });
+  })
+  .catch(error => console.error('Error fetching data:', error));
+
+  function getArticleIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('articleId'); 
+  }
+  
+  function loadArticleById(articleId) {
+    fetch('articles.json')
+      .then(response => response.json())
+      .then(articles => {
+        const article = articles.find(a => a.id === parseInt(articleId)); 
+        if (article) {
+          document.getElementById('article-title').textContent = article.title;
+          document.getElementById('article-author').textContent = article.author;
+          document.getElementById('article-text1').innerHTML = article.text1;
+          document.getElementById('article-text2').innerHTML = article.text2;
+          document.getElementById('article-image').src = article.imageUrl;
+          document.getElementById('article-footer').textContent = article.footer;
+        } else {
+          console.log('Article not found');
+        }
+      })
+      .catch(error => console.error('Error loading article data:', error));
+  }
+  
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const articleId = getArticleIdFromUrl();
+    if (articleId) {
+      loadArticleById(articleId);
+    }
+  });
+  
 
 // REDEFINE FUNCTION ARTICLE NAVEGATION
-
 document.addEventListener('DOMContentLoaded', () => {
   loadArticle(currentIndex); 
 
