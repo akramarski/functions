@@ -29,6 +29,7 @@ function loadLogos() {
       .then(logosData => {
           const logosContainer = document.getElementById('logos-container');
           if (logosContainer) {
+              logosContainer.innerHTML = ''; 
               logosData.forEach(brand => {
                   const brandElement = document.createElement('p');
                   brandElement.className = 'brand-name';
@@ -45,9 +46,20 @@ function loadLogos() {
                   logosContainer.appendChild(brandElement);
               });
           }
+          const closeButton = document.querySelector('.close-btn');
+          if (closeButton) {
+              closeButton.addEventListener('click', function() {
+                  const modal = document.getElementById('modal');
+                  if (modal) {
+                      modal.style.display = 'none';
+                  }
+              });
+          }
       })
       .catch(error => console.error('Error loading logos:', error));
 }
+
+document.addEventListener('DOMContentLoaded', loadLogos);
 
 // MASTERHEAD JSON
 function loadrMasthead() {
