@@ -7,11 +7,11 @@
         <link href="style.css" rel="stylesheet">
         <script defer src="content.js"></script>
         <script defer src="aother.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
         <title>Functions</title>
         <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
         <link href="https://db.onlinewebfonts.com/c/357dec575cec43d3b5acfea7e06a125c?family=Glosa+Display+W01+Medium" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gza&display=swap">
 
         
         
@@ -22,17 +22,15 @@
                 <a href="index.html">re | inventing</a>
             </div>
             <div class="menu">
-                <a href="">Archive</a>
-                <a href="">Limited Editions</a>
-                <a href="">Artists</a>
+                <p>Magazine Archives <br> Print <br>Digital</p>
             </div>
-            <div class="mode-switcher">
-                <button id="printMode" class="mode-button active">PRINT</button>
-                <button id="digitalMode" class="mode-button active">DIGITAL</button>
+            <div class="editor">
+                <a href="editor.html">EDITOR</a>
             </div>
+            
         </div>
     
-        <div class="scroll-container">
+        <div class="scroll-container reveal">
             <div class="scroll-wrapper">
                 <img src="https://images-prod.anothermag.com/2200/azure/another-prod/440/3/443322.jpg" alt="Cover 1">
                 <img src="https://images-prod.anothermag.com/2200/azure/another-prod/440/3/443775.jpg" alt="Cover 2">
@@ -43,12 +41,13 @@
                 <img src="https://images-prod.anothermag.com/2200/azure/another-prod/440/3/443797.jpg" alt="Cover 7">
             </div>
         </div>
-    
+        <div class="reveal">
         <div class="advertisement">ADVERTISEMENT</div>
         <div id="logos-container">
         </div>
+    </div>
     
-        <div id="modal" class="modal" style="display:none;">
+        <div id="modal " class="modal" style="display:none;">
             <div class="modal-content">
                 <span id="close-btn" class="close-btn">&times;</span>
                 <img id="expanded-img" src="" alt="Big Image">
@@ -57,7 +56,7 @@
     
 
         <div class="index"> 
-            <div class="magazinetitle">
+            <div class="magazinetitle reveal">
                 <p>AnOther Magazine</p>
             <p>Issue 46</p>
             <p>Spring/Summer 2024</p>
@@ -65,7 +64,7 @@
         <div><p> Masterhead</p></div>
         </div>
 
-        <div class="masthead-container">
+        <div class="masthead-container reveal">
     <div class="colum1">
         <div id="Editorial" class="flexbox-column masthead-section">
         <button class="dropdown-btn">Editorial</button>
@@ -143,16 +142,16 @@
         </div>
     </div>
 </div>  
-    </div>
+
     
         <div class=subchapter>
-            <div class="subc-title">AnOther Thing I Wanted to Tell You...</div>
+            <div class="subc-title reveal">AnOther Thing I Wanted to Tell You...</div>
         </div>
         <div class="subc-credits"> 
-            <div class="subc-categorie">
+            <div class="subc-categorie reveal">
                 <p>PHOTOGRAPHY Maripol</p>
         </div>
-        <div class="name-people">
+        <div class="name-people reveal">
             <p>Benny Safdie</p>
             <p>Tala Madani</p>
             <p>Karis Jagger and Fabienne Toback</p>
@@ -166,25 +165,25 @@
         </div>
         
         </div>
-        <div class="number">i</div>
+        <div class="number reveal">i</div>
         <div id="articles-gallery1">
         <div id="gallery-container"></div>
-        <div id="gallery-title-overlay" class="gallery-title-overlay"></div>
+        <div id="gallery-title-overlay" class="gallery-title-overlay reveal"></div>
         </div>
 
         <div class=subchapter>
-            <div class="subc-title">AnOther Loves</div>
+            <div class="subc-title reveal">AnOther Loves</div>
         </div>
-        <div class="subc-credits"> 
+        <div class="subc-credits reveal"> 
             <div class="subc-categorie">
                 <p>PHOTOGRAPHY Roe Erthridge</p>
                 <p>FASHION DIRECTOR Katie Shillingford</p>
                 <p>SET DESIGN Andy Harman</p>
         </div>
         </div>
-        <div class="number2">ii</div>
+        <div class="number2 reveal">ii</div>
 
-        <div class="scroll-container2">
+        <div class="scroll-container2 reveal">
             <div class="scroll-wrapper2">  
             </div>
         </div>
@@ -197,9 +196,10 @@
         </main>
         <footer class="footer">
             <div class="menu-bar">
-                <button id="increase-font">A+</button>
-                <button id="decrease-font">A-</button>
+                <button id="increase-font"></button>
                 <button id="toggle-contrast">DARK-MODE</button>
+                <button id="decrease-font"></button>
+                
             </div>
        </footer>
 
