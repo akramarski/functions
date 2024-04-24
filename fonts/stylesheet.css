@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Gza Outline';
+    src: url('Gza-OutlineSemiBold.eot');
+    src: local('Gza Outline SemiBold'), local('Gza-OutlineSemiBold'),
+        url('Gza-OutlineSemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineSemiBold.woff2') format('woff2'),
+        url('Gza-OutlineSemiBold.woff') format('woff'),
+        url('Gza-OutlineSemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza Outline';
+    src: url('Gza-OutlineRegularItalic.eot');
+    src: local('Gza Outline Regular Italic'), local('Gza-OutlineRegularItalic'),
+        url('Gza-OutlineRegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineRegularItalic.woff2') format('woff2'),
+        url('Gza-OutlineRegularItalic.woff') format('woff'),
+        url('Gza-OutlineRegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gza Outline Super';
+    src: url('Gza-OutlineSuper.eot');
+    src: local('Gza Outline Super'), local('Gza-OutlineSuper'),
+        url('Gza-OutlineSuper.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineSuper.woff2') format('woff2'),
+        url('Gza-OutlineSuper.woff') format('woff'),
+        url('Gza-OutlineSuper.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza';
+    src: url('Gza-SemiBoldItalic.eot');
+    src: local('Gza SemiBold Italic'), local('Gza-SemiBoldItalic'),
+        url('Gza-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gza-SemiBoldItalic.woff2') format('woff2'),
+        url('Gza-SemiBoldItalic.woff') format('woff'),
+        url('Gza-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gza Outline';
+    src: url('Gza-OutlineSemiBoldItalic.eot');
+    src: local('Gza Outline SemiBold Italic'), local('Gza-OutlineSemiBoldItalic'),
+        url('Gza-OutlineSemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineSemiBoldItalic.woff2') format('woff2'),
+        url('Gza-OutlineSemiBoldItalic.woff') format('woff'),
+        url('Gza-OutlineSemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gza Outline';
+    src: url('Gza-OutlineRegular.eot');
+    src: local('Gza Outline Regular'), local('Gza-OutlineRegular'),
+        url('Gza-OutlineRegular.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineRegular.woff2') format('woff2'),
+        url('Gza-OutlineRegular.woff') format('woff'),
+        url('Gza-OutlineRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza';
+    src: url('Gza-RegularItalic.eot');
+    src: local('Gza Regular Italic'), local('Gza-RegularItalic'),
+        url('Gza-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Gza-RegularItalic.woff2') format('woff2'),
+        url('Gza-RegularItalic.woff') format('woff'),
+        url('Gza-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gza';
+    src: url('Gza-SemiBold.eot');
+    src: local('Gza SemiBold'), local('Gza-SemiBold'),
+        url('Gza-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Gza-SemiBold.woff2') format('woff2'),
+        url('Gza-SemiBold.woff') format('woff'),
+        url('Gza-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza Outline';
+    src: url('Gza-OutlineBold.eot');
+    src: local('Gza Outline Bold'), local('Gza-OutlineBold'),
+        url('Gza-OutlineBold.eot?#iefix') format('embedded-opentype'),
+        url('Gza-OutlineBold.woff2') format('woff2'),
+        url('Gza-OutlineBold.woff') format('woff'),
+        url('Gza-OutlineBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza';
+    src: url('Gza-Bold.eot');
+    src: local('Gza Bold'), local('Gza-Bold'),
+        url('Gza-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Gza-Bold.woff2') format('woff2'),
+        url('Gza-Bold.woff') format('woff'),
+        url('Gza-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza';
+    src: url('Gza-Regular.eot');
+    src: local('Gza Regular'), local('Gza-Regular'),
+        url('Gza-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Gza-Regular.woff2') format('woff2'),
+        url('Gza-Regular.woff') format('woff'),
+        url('Gza-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gza Super';
+    src: url('Gza-Super.eot');
+    src: local('Gza Super'), local('Gza-Super'),
+        url('Gza-Super.eot?#iefix') format('embedded-opentype'),
+        url('Gza-Super.woff2') format('woff2'),
+        url('Gza-Super.woff') format('woff'),
+        url('Gza-Super.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
