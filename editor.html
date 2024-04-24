@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="reset.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <script defer src="content.js"></script>
+        <title>Functions</title>
+        <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="mainbar">
+            <div class="fullcontainer-index">
+                <a href="index.html">re | inventing</a>
+            </div>
+            <div class="menu">
+                <p>Magazine Archives <br> Print <br>Digital</p>
+            </div>
+            <div class="editor">
+                <a href="editor.html">EDITOR</a>
+            </div>
+            
+        </div>
+<section class="contact-section reveal" >
+            <div class="access">
+                <div class="information">
+            <p class="feature">Editor <em>access</em></p>
+            <p class="exp">Join us in reinventing the digital magazine archive. Contribute new articles to the magazines you love and be part of our collaborative editorial community.</p>
+        </div>
+            <form class="contact-form" onsubmit="validateForm(event)">
+                <div class="input-group">
+                    <label for="full-name">FULL NAME</label>
+                    <input type="text" name="full_name" required />
+                </div>
+                <div class="input-group">
+                    <label for="email">EMAIL</label>
+                    <input type="email" name="email" required />
+                </div>
+                <div class="input-group">
+                    <label for="password">PASSWORD</label>
+                    <input type="password" name="password" required />
+                </div>
+                <button type="submit" class="submit-button">log in</button>
+                <div id="error-message" style="display: none; color:grey;">Sorry, you're not an authorized editor</div>
+            </form>
+            </form>
+        </div>
+        </section>
+
+         <footer class="footer">
+            <div class="menu-bar">
+                <button id="increase-font"></button>
+                <button id="toggle-contrast">DARK-MODE</button>
+                <button id="decrease-font"></button>
+            </div>
+       </footer>
+
+    </body>
+    </html>
