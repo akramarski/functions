@@ -1,5 +1,5 @@
 [
-    { "id": 1,
+    { 
       "title": "Benny Safdie, writer, director and actor, <em>on physics</em>",
       "author": "Alex Denney",
       "imageUrl":"https://images-prod.anothermag.com/571/azure/another-prod/440/4/444397.jpg",
@@ -9,6 +9,7 @@
       "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy’s Camera"
     },
     {
+      "id": 2,
         "title": "Tala Madani, artist,<em> on navigating the now</em>",
         "author": "Sophie Bew",
         "imageUrl":"https://images-prod.anothermag.com/570/azure/another-prod/440/5/445696.jpg",
@@ -18,13 +19,74 @@
         "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
       },
 
-      {
+      {"id": 3,
         "title": "Karis Jagger and Fabienne Toback, producers,<em> on Losing My Edge</em>",
         "author": "Ananda Pellerin",
         "imageUrl":"https://images-prod.anothermag.com/570/azure/another-prod/440/5/445801.jpg",
         "text1": "We’re into multigenerational stories, so LCD Soundsystem’s Losing My Edge is inspirational for us. There’s a big element in our series High on the Hog about passing the baton, and the song speaks to that idea. We love going to shows, we love dancing and we love an anthem – this song resonates with joy. We’ve seen LCD Soundsystem many times, including at a very sweaty show at the Fox Theater in Pomona, followed by us dancing together in the living room. The song feels like it’s been around forever but it doesn’t sound dated. “The lead singer, James Murphy, isn’t trying to be anything but what he is – he is honest and funny. The song talks about finding relevancy in our lives as we get older and continuing to be relevant in our society, which is poignant for us as female producers. It’s also a reminder not to fall for the trope of ‘those silly youths’. Everyone has a story to learn from – we want to stay aware of what’s happening but also bring all the experience and history with us to communicate ideas. With projects like High on the Hog we want to be connectors.”",
   
         "text2": "The LA-based producer and actor Karis Jagger first met the filmmaker Fabienne Toback at a pregnancy yoga class and a friendship blossomed as the pair ambled through the hills of Laurel Canyon together. Today they’re the force behind the award-winning Netflix series High on the Hog, hosted by the food writer Stephen Satterfield. Based on the culinary historian Jessica B Harris’s book of the same name, the show explores the present-day and little-told historical influence of African Americans on the kitchens and food cultures of the US, from the story of gumbo to the Black Panthers’ free breakfast programme for schoolchildren. Jagger and Toback continue to cook up projects under Hey Sistah, a production company and platform that unites their passions for sharing ideas, food experiences and cocktails.",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      },
+      {"id": 4,
+        "title": "Charles Melton, actor,<em>on han</em>",
+        "author": "Alexander Fury",
+        "imageUrl":"https://article-imgs.scribdassets.com/3hnutoal1cc45jz4/images/filePKQSHVL5.jpg",
+        "text1": "We’re into multigenerational stories, so LCD Soundsystem’s Losing My Edge is inspirational for us. There’s a big element in our series High on the Hog about passing the baton, and the song speaks to that idea. We love going to shows, we love dancing and we love an anthem – this song resonates with joy. We’ve seen LCD Soundsystem many times, including at a very sweaty show at the Fox Theater in Pomona, followed by us dancing together in the living room. The song feels like it’s been around forever but it doesn’t sound dated. “The lead singer, James Murphy, isn’t trying to be anything but what he is – he is honest and funny. The song talks about finding relevancy in our lives as we get older and continuing to be relevant in our society, which is poignant for us as female producers. It’s also a reminder not to fall for the trope of ‘those silly youths’. Everyone has a story to learn from – we want to stay aware of what’s happening but also bring all the experience and history with us to communicate ideas. With projects like High on the Hog we want to be connectors.”",
+  
+        "text2": "The LA-based producer and actor Karis Jagger first met the filmmaker Fabienne Toback at a pregnancy yoga class and a friendship blossomed as the pair ambled through the hills of Laurel Canyon together. Today they’re the force behind the award-winning Netflix series High on the Hog, hosted by the food writer Stephen Satterfield. Based on the culinary historian Jessica B Harris’s book of the same name, the show explores the present-day and little-told historical influence of African Americans on the kitchens and food cultures of the US, from the story of gumbo to the Black Panthers’ free breakfast programme for schoolchildren. Jagger and Toback continue to cook up projects under Hey Sistah, a production company and platform that unites their passions for sharing ideas, food experiences and cocktails.",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      }
+      ,
+      {"id": 5,
+        "title": "Elaine Kahn, poet,<em>on the short story collection Gaza Writes Back</em>",
+        "author": "Laura Allsop",
+        "imageUrl":"https://images-prod.anothermag.com/570/azure/another-prod/440/6/446243.jpg",
+        "text1": "“Gaza Writes Back is a collection of short stories comprising the work of young Gazans writing during 2008’s Operation Cast Lead, also known as the Gaza Massacre, a 22-day Israeli military assault on the Gaza Strip. I got a copy after learning about the book’s editor, Refaat Alareer, a poet, professor and activist who was assassinated on 7 December 2023 in a targeted Israeli airstrike. While the stories in the book vary widely in theme and style, there is something disarming, even blunt, about the collection as a whole. I was caught off guard by how intimate it felt to read. That is attributable to the talent of the individual writers and Alareer’s skill as an editor. ‘There’s a Palestine that dwells inside all of us,’ Alareer writes in the foreword, ‘ ... a free Palestine where all people regardless of colour, religion or race coexist.’ This book is a living testament to the force of Alareer’s faith in literature’s capacity to be a powerful liberatory practice, and to his steadfast dedication to cultivating that power in his students.”",
+  
+        "text2": "The liberatory potential of language is harnessed to quietly devastating effect in the poetry of Elaine Kahn. Diamond-bright, with matchless titles and indelible imagery, Kahn’s poems reach fearlessly into the tenderest places, whether they’re chronicling the phases of love, like in Romance or the End (2020), or examining what it is to exist in a body, as with 2015’s Women in Public. Her fans include Kim Gordon and fellow poet Eileen Myles, who described Romance or the End as “crazy and wonderful like a basket full of snakes”. With a background in visual art and music, Kahn uses an approach to writing poetry that is experimental and unfailingly generous. Her Poetry Field School, which she runs alongside her writing practice, and which offers collaborative, non-hierarchical poetry workshops, is for her almost a calling – something she describes as a kind of politics.",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      }
+      ,
+      {"id": 6,
+        "title": "Harry Dodge, artist, <em>on Édouard Glissant's Poetics of Reflection</em>",
+        "author": "Amelia Abraham",
+        "imageUrl":"https://article-imgs.scribdassets.com/btzuygtvkc45joj/images/fileGZUJWODE.jpg",
+        "text1": "“My first encounter with the French-Martinique philosopher Édouard Glissant was during a lecture by the poet Fred Moten in Los Angeles. He said, ‘We have to consent not to be a single being.’ It set me thinking, so I read Glissant’s Poetics of Relation, from which Moten was paraphrasing. Part of what’s fascinating is the form — a philosophical text that’s poetic, almost like a song. In it he talks about the interconnectedness of everything and how everything is always changing everything else — ‘Diversity, the quantifiable totality of every possible difference, is the motor driving universal energy.’ To acknowledge every organism or every dot in space-time as different can help us avoid categorical thinking, which in turn can lead to systemic violence or polarisation. Glissant talks about opacity too — this idea of letting the Other, this thing that is unfamiliar to you, remain unfamiliar to you. Not incorporating it into your familiar, which effaces difference. It’s a book I go back to, reread and get new things from all the time. To me, Glissant’s work is an exhortation to tolerate what’s unknowable.”",
+  
+        "text2": "The Los Angeles-based multidisciplinary artist Harry Dodge works in sculpture, film and text. What connects his practice across these mediums is feverish curiosity: “Thinking is a full-body pleasure,” he says, “a kind of joyful puzzling.” Dodge has exhibited at the New and Whitney museums in New York and the Hammer Museum in LA, and his sculptures are currently on display in Conversation 8, a joint show at the San Francisco Arts Commission with the painter Alicia McCarthy, a longtime friend of his. In 2020, Dodge published My Meteorite: Or, Without the Random There Can Be No New Thing, a memoir-meets-thought experiment about the cosmic interconnectedness of moments, people and matter across time and space. He is now working on a psychedelic science-fiction novella. ",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      }
+
+      ,
+      {"id": 7,
+        "title": "Charles Fine, artist, <em> on Mexico</em>",
+        "author": "Violet Conroy",
+        "imageUrl":"https://article-imgs.scribdassets.com/46mdclqgzkc45jiw/images/fileTTRRRFG6.jpg",
+        "text1": "“My first encounter with the French-Martinique philosopher Édouard Glissant was during a lecture by the poet Fred Moten in Los Angeles. He said, ‘We have to consent not to be a single being.’ It set me thinking, so I read Glissant’s Poetics of Relation, from which Moten was paraphrasing. Part of what’s fascinating is the form — a philosophical text that’s poetic, almost like a song. In it he talks about the interconnectedness of everything and how everything is always changing everything else — ‘Diversity, the quantifiable totality of every possible difference, is the motor driving universal energy.’ To acknowledge every organism or every dot in space-time as different can help us avoid categorical thinking, which in turn can lead to systemic violence or polarisation. Glissant talks about opacity too — this idea of letting the Other, this thing that is unfamiliar to you, remain unfamiliar to you. Not incorporating it into your familiar, which effaces difference. It’s a book I go back to, reread and get new things from all the time. To me, Glissant’s work is an exhortation to tolerate what’s unknowable.”",
+  
+        "text2": "The Los Angeles-based multidisciplinary artist Harry Dodge works in sculpture, film and text. What connects his practice across these mediums is feverish curiosity: “Thinking is a full-body pleasure,” he says, “a kind of joyful puzzling.” Dodge has exhibited at the New and Whitney museums in New York and the Hammer Museum in LA, and his sculptures are currently on display in Conversation 8, a joint show at the San Francisco Arts Commission with the painter Alicia McCarthy, a longtime friend of his. In 2020, Dodge published My Meteorite: Or, Without the Random There Can Be No New Thing, a memoir-meets-thought experiment about the cosmic interconnectedness of moments, people and matter across time and space. He is now working on a psychedelic science-fiction novella. ",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      }
+      ,
+      {"id": 8,
+        "title": "Graylen Eastwood, drummer and actor, <em>on the language of music</em>",
+        "author": "Rose Dodd",
+        "imageUrl":"https://article-imgs.scribdassets.com/8pn01xrtz4c45jmd/images/file3G8JO02O.jpg",
+        "text1": "“My first encounter with the French-Martinique philosopher Édouard Glissant was during a lecture by the poet Fred Moten in Los Angeles. He said, ‘We have to consent not to be a single being.’ It set me thinking, so I read Glissant’s Poetics of Relation, from which Moten was paraphrasing. Part of what’s fascinating is the form — a philosophical text that’s poetic, almost like a song. In it he talks about the interconnectedness of everything and how everything is always changing everything else — ‘Diversity, the quantifiable totality of every possible difference, is the motor driving universal energy.’ To acknowledge every organism or every dot in space-time as different can help us avoid categorical thinking, which in turn can lead to systemic violence or polarisation. Glissant talks about opacity too — this idea of letting the Other, this thing that is unfamiliar to you, remain unfamiliar to you. Not incorporating it into your familiar, which effaces difference. It’s a book I go back to, reread and get new things from all the time. To me, Glissant’s work is an exhortation to tolerate what’s unknowable.”",
+  
+        "text2": "The Los Angeles-based multidisciplinary artist Harry Dodge works in sculpture, film and text. What connects his practice across these mediums is feverish curiosity: “Thinking is a full-body pleasure,” he says, “a kind of joyful puzzling.” Dodge has exhibited at the New and Whitney museums in New York and the Hammer Museum in LA, and his sculptures are currently on display in Conversation 8, a joint show at the San Francisco Arts Commission with the painter Alicia McCarthy, a longtime friend of his. In 2020, Dodge published My Meteorite: Or, Without the Random There Can Be No New Thing, a memoir-meets-thought experiment about the cosmic interconnectedness of moments, people and matter across time and space. He is now working on a psychedelic science-fiction novella. ",
+        "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
+      }
+
+      ,
+      {"id": 9,
+        "title": "Eli Russell Linnetz, designer, <em>on his shearling coats</em>",
+        "author": "George Pistachio",
+        "imageUrl":"https://article-imgs.scribdassets.com/8xvihr5mwwc45jqi/images/filePEXJKU72.jpg",
+        "text1": "“My first encounter with the French-Martinique philosopher Édouard Glissant was during a lecture by the poet Fred Moten in Los Angeles. He said, ‘We have to consent not to be a single being.’ It set me thinking, so I read Glissant’s Poetics of Relation, from which Moten was paraphrasing. Part of what’s fascinating is the form — a philosophical text that’s poetic, almost like a song. In it he talks about the interconnectedness of everything and how everything is always changing everything else — ‘Diversity, the quantifiable totality of every possible difference, is the motor driving universal energy.’ To acknowledge every organism or every dot in space-time as different can help us avoid categorical thinking, which in turn can lead to systemic violence or polarisation. Glissant talks about opacity too — this idea of letting the Other, this thing that is unfamiliar to you, remain unfamiliar to you. Not incorporating it into your familiar, which effaces difference. It’s a book I go back to, reread and get new things from all the time. To me, Glissant’s work is an exhortation to tolerate what’s unknowable.”",
+  
+        "text2": "The Los Angeles-based multidisciplinary artist Harry Dodge works in sculpture, film and text. What connects his practice across these mediums is feverish curiosity: “Thinking is a full-body pleasure,” he says, “a kind of joyful puzzling.” Dodge has exhibited at the New and Whitney museums in New York and the Hammer Museum in LA, and his sculptures are currently on display in Conversation 8, a joint show at the San Francisco Arts Commission with the painter Alicia McCarthy, a longtime friend of his. In 2020, Dodge published My Meteorite: Or, Without the Random There Can Be No New Thing, a memoir-meets-thought experiment about the cosmic interconnectedness of moments, people and matter across time and space. He is now working on a psychedelic science-fiction novella. ",
         "footer": "Production co-ordinator: Lino Meoli. Post-production: Samy's Camera"
       }
 ]
